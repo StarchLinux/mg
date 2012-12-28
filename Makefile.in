@@ -17,6 +17,7 @@ mandir=		$(prefix)/man
 CC=		gcc
 CFLAGS?=	-O2 -pipe
 CFLAGS+=	-g -Wall -Werror
+CFLAGS+=	-D_BSD_SOURCE -D_XOPEN_SOURCE
 LIBS= 		-lncurses
 
 INSTALL=	/usr/bin/install
