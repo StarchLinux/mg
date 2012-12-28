@@ -7,6 +7,7 @@
  */
 
 #include "libgen.h"
+#include <stdio.h>
 #include <stdarg.h>
 
 #include "def.h"
