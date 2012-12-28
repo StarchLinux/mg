@@ -567,14 +567,8 @@ make_file_list(char *buf)
 
 	while ((dent = readdir(dirp)) != NULL) {
 		int isdir;
-#if defined (__CYGWIN__)	/* Cygwin lacks reclen/namlen. */
 		if (strlen(dent->d_name) < len
 		    || memcmp(cp, dent->d_name, len) != 0)
-#elif defined (__GLIBC__)		/* Linux uses reclen instead. */
-		if (dent->d_reclen < len || memcmp(cp, dent->d_name, len) != 0)
-#else
-		if (dent->d_namlen < len || memcmp(cp, dent->d_name, len) != 0)
-#endif
 			continue;
 
 		isdir = 0;
