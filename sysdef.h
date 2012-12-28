@@ -9,6 +9,7 @@
 #include	"config.h"
 
 #include <sys/param.h>
+#include <sys/types.h>
 
 /* This is the queue.h from OpenBSD/NetBSD, works fine. The one provided by
    others is incompatible. */
