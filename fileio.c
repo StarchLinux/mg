@@ -120,10 +120,8 @@ ffwopen(const char *fn, struct buffer *bp)
 	 * future writes will do the same thing.
 	 */
 	if (bp && bp->b_fi.fi_mode) {
-		int ret;
-
 		fchmod(fd, bp->b_fi.fi_mode & 07777);
-		ret = fchown(fd, bp->b_fi.fi_uid, bp->b_fi.fi_gid);
+		(void)fchown(fd, bp->b_fi.fi_uid, bp->b_fi.fi_gid);
 	}
 	return (FIOSUC);
 }

@@ -464,14 +464,14 @@ undo(int f, int n)
 	struct undo_rec	*ptr, *nptr;
 	int		 done, rval;
 	struct line	*lp;
-	int		 offset, save, dot;
+	int		 offset, save;
 	static int	 nulled = FALSE;
 	int		 lineno;
 
 	if (n < 0)
 		return (FALSE);
 
-	dot = find_dot(curwp->w_dotp, curwp->w_doto);
+	find_dot(curwp->w_dotp, curwp->w_doto);
 
 	ptr = curbp->b_undoptr;
 
