@@ -29,7 +29,7 @@ char		 pat[NPAT];			/* pattern		*/
 static void	 edinit(PF);
 static void usage(void);
 
-extern char	*__progname;
+char		*__progname;
 
 static void
 usage()
@@ -47,6 +47,8 @@ main(int argc, char **argv)
 	int	 o, i, nfiles;
 	int	 nobackups = 0;
 	struct buffer *bp;
+
+	__progname = argv[0];
 
 	while ((o = getopt(argc, argv, "nf:")) != -1)
 		switch (o) {
